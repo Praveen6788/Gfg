@@ -32,15 +32,17 @@ from collections import Counter
 
 
 # first repeting Number
-def firstRepeated( arr):
-    x = Counter(arr)  # Count occurrences of each element
-    min_index = float("inf")  # Set initial min_index to a large value
+# def firstRepeated( arr):
+#     x = Counter(arr)  # Count occurrences of each element
+#     min_index = float("inf")  # Set initial min_index to a large value
     
-    for i in range(len(arr)):
-        if x[arr[i]] >= 2:  # Check if the element is repeated
-            min_index = min(i, min_index)
-    return min_index+1 if min_index != float("inf") else -1
+#     for i in range(len(arr)):
+#         if x[arr[i]] >= 2:  # Check if the element is repeated
+#             min_index = min(i, min_index)
+#     return min_index+1 if min_index != float("inf") else -1
              
-arr = [1,2,3,4]
-a =firstRepeated(arr)
-print(a)
+# arr = [1,2,3,4]
+# a =firstRepeated(arr)
+# print(a)
+
+
