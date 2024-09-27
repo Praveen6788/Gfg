@@ -31,4 +31,42 @@ def max_step(arr):
     return max_count
 
 a = max_step([20, 6 ,5, 10, 7 ,17, 19, 4, 17, 2, 18, 12, 16, 11])
-print(a)
+# print(a)
+
+
+
+
+
+
+
+# K Sized Subarray Maximum
+
+# Difficulty: Medium
+# Given an array arr[] and an integer k. Find the maximum for each and every contiguous subarray of size k.
+
+
+
+
+
+
+
+
+
+
+def max_of_subarrays(self,k,arr):
+        n = len(arr)
+        output = []
+        maxele = max(arr[:k]) 
+        output.append(maxele)
+        
+        for i in range(1, n - k + 1):
+            if arr[i - 1] == maxele:
+               
+                maxele = max(arr[i:i + k])
+            else:
+                maxele = max(maxele, arr[i + k - 1])
+            output.append(maxele)
+        
+        return output 
+ab= max_of_subarrays(3,[1, 2, 3, 1, 4, 5, 2, 3, 6])
+# print(ab)
