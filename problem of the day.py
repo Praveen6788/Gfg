@@ -53,7 +53,7 @@ a = max_step([20, 6 ,5, 10, 7 ,17, 19, 4, 17, 2, 18, 12, 16, 11])
 
 
 
-def max_of_subarrays(self,k,arr):
+def max_of_subarrays(k,arr):
         n = len(arr)
         output = []
         maxele = max(arr[:k]) 
@@ -70,3 +70,42 @@ def max_of_subarrays(self,k,arr):
         return output 
 ab= max_of_subarrays(3,[1, 2, 3, 1, 4, 5, 2, 3, 6])
 # print(ab)
+
+
+
+
+
+
+
+
+
+def minimizeCost(k, arr):
+    n = len(arr)
+    mincost = float('inf')
+
+    dp = [float('inf')] * n
+    dp[0] = 0  
+    for i in range(n):
+        for j in range(1, k + 1):  
+            if i + j < n:  
+                cost = dp[i] + abs(arr[i] - arr[i + j])
+                dp[i + j] = min(dp[i + j], cost)  
+    
+   
+    return dp[-1]
+
+k = 2
+arr = [35, 1, 70, 25, 79, 59, 63, 65]
+mincost = minimizeCost(k, arr)
+# print("mincost", mincost)
+
+
+
+
+
+
+
+
+
+
+
