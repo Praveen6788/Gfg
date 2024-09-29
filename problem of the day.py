@@ -104,8 +104,22 @@ mincost = minimizeCost(k, arr)
 
 
 
+# Total Count
+def totalCount (k, arr):
+    total_count = 0
 
+    for num in arr:
+        
+        parts = (num + k - 1) // k
+        print(num+k-1) 
+        
+        print(parts)
+        total_count += parts
+    
+    return total_count
 
-
+k = 3
+arr = [5, 8, 10, 13]
+print(totalCount(k,arr))
 
 
