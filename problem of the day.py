@@ -120,6 +120,30 @@ def totalCount (k, arr):
 
 k = 3
 arr = [5, 8, 10, 13]
-print(totalCount(k,arr))
+# print(totalCount(k,arr))
+
+
+
+# Multiply two linked lists
+# Difficulty: Easy
+# Given elements as nodes of the two singly linked lists. The task is to multiply these two linked lists, say L1 and L2.
+
+
+def multiply_two_lists(self, first, second):
+    MOD = 1000000007 
+
+    num1 = 0
+    while first:
+        num1 = (num1 * 10 + first.data) % MOD
+        first = first.next
+
+
+    num2 = 0
+    while second:
+        num2 = (num2 * 10 + second.data) % MOD
+        second = second.next
+
+
+    return(num1 * num2) % MOD
 
 
