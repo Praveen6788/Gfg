@@ -187,3 +187,18 @@ def findMajority(self, nums):
         if not result:
             return [-1]
         return sorted(result)
+    
+
+
+def findSmallest(self, arr):
+        res = 1
+
+    # Traverse the array and increment the result if the current element
+    # is less than or equal to the result
+        for i in range(len(arr)):
+            # If arr[i] is greater than res, then we cannot form 'res' as a sum
+            if arr[i] > res:
+                break
+            res += arr[i]
+    
+        return res
