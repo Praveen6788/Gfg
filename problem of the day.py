@@ -202,3 +202,24 @@ def findSmallest(self, arr):
             res += arr[i]
     
         return res
+    
+    
+    
+# Find the Sum of Last N nodes of the Linked List
+
+
+def sumOfLastN_Nodes(self, head, n):
+        #function should return sum of last n nodes
+        temp =head
+        sum1=0
+        # for i in range(1,n+1):
+        #     sum1+=temp.data
+        #     temp =temp.next
+        # return sum1
+        array=[]
+        while temp:
+            array.append(temp.data)
+            temp= temp.next
+        array.reverse()
+        return sum(array[:n])
+
