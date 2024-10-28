@@ -223,3 +223,13 @@ def sumOfLastN_Nodes(self, head, n):
         array.reverse()
         return sum(array[:n])
 
+
+# Remove dupilicates in array
+def removeDuplicates(self, arr):
+        s =[]
+        for i in arr:
+            if i in s:
+                continue
+            else:
+                s.append(i)
+        return s
