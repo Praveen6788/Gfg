@@ -233,3 +233,61 @@ def removeDuplicates(self, arr):
             else:
                 s.append(i)
         return s
+    
+    
+# Quick Sort on Linked List
+# Difficulty: Medium
+# You are given a Linked List. Sort the given Linked List using quicksort. 
+
+# Examples:
+
+# Input: Linked list: 1->6->2
+# Output: 1->2->6
+
+def quickSort(head):
+    if head is None or head.next is None:
+        return head
+
+    # Partition the list around the pivot (first element)
+    pivot = head.data
+    less_head = less_tail = None
+    greater_head = greater_tail = None
+    current = head.next
+
+    while current:
+        if current.data < pivot:
+            if less_head is None:
+                less_head = less_tail = current
+            else:
+                less_tail.next = current
+                less_tail = less_tail.next
+        else:
+            if greater_head is None:
+                greater_head = greater_tail = current
+            else:
+                greater_tail.next = current
+                greater_tail = greater_tail.next
+        current = current.next
+
+
+    if less_tail:
+        less_tail.next = None
+    if greater_tail:
+        greater_tail.next = None
+
+    less_sorted = quickSort(less_head)
+    greater_sorted = quickSort(greater_head)
+
+   
+    if less_sorted:
+        
+        temp = less_sorted
+        while temp.next:
+            temp = temp.next
+        temp.next = head  
+    else:
+        less_sorted = head
+
+    head.next = greater_sorted  
+
+    return less_sorted
