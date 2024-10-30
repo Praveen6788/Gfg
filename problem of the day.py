@@ -291,3 +291,23 @@ def quickSort(head):
     head.next = greater_sorted  
 
     return less_sorted
+
+
+# count pairs wuth diff k
+from collections import Counter
+
+def countPairsWithDiffK(self,arr, k):
+    count = 0
+    freq = Counter(arr)
+    
+    for num in freq:
+        if k > 0:
+            # Count pairs (num, num + k)
+            count += freq[num] * freq.get(num + k, 0)
+        elif k == 0:
+            # Count pairs where the same number appears more than once
+            count += (freq[num] * (freq[num] - 1)) // 2
+            
+    return count
+    	        
+    
