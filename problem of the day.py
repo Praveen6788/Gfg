@@ -310,4 +310,23 @@ def countPairsWithDiffK(self,arr, k):
             
     return count
     	        
+             
+# Kth distance
+# Difficulty: EasyAccuracy: 48.69%Submissions: 30K+Points: 2
+# Given an unsorted array arr and a number k which is smaller than the size of the array. Return true if the array contains any duplicate within k distance throughout the array else false.
+
+
+def checkDuplicatesWithinK(self, arr, k):
+        seen = set()
+
+        for i in range(len(arr)):
+            if arr[i] in seen:
+                return True  # Duplicate found within k distance
+            
+            seen.add(arr[i])
     
+            # Maintain the window size of k by removing the oldest element
+            if i >= k:
+                seen.remove(arr[i - k])
+        
+        return False 
