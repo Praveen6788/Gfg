@@ -330,3 +330,31 @@ def checkDuplicatesWithinK(self, arr, k):
                 seen.remove(arr[i - k])
         
         return False 
+    
+
+
+
+def rotateString( s: str, goal: str):
+        if s == goal:
+            return True
+        k=list(s)
+        # print(k)
+        g =list(goal)
+        for i in range(len(s)):
+            print(k)
+            if k == g:
+                return True
+            else:
+                f=k.pop(0)
+                k.append(f)
+
+
+                
+        return False
+    
+s="abcde" 
+goal="cdeab"
+print(rotateString(s,goal))
+
+
+
