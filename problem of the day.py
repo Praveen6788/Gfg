@@ -352,9 +352,16 @@ def rotateString( s: str, goal: str):
                 
         return False
     
-s="abcde" 
-goal="cdeab"
-print(rotateString(s,goal))
 
-
-
+def minIncrements(self, arr):
+        count = 0
+        arr.sort()
+        
+        for i in range(1, len(arr)):
+            # If the current element is not greater than the previous one, increment it
+            if arr[i] <= arr[i - 1]:
+                increment_needed = arr[i - 1] - arr[i] + 1
+                arr[i] += increment_needed
+                count += increment_needed
+                
+        return count
