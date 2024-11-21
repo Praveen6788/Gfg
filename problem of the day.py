@@ -353,15 +353,16 @@ def rotateString( s: str, goal: str):
         return False
     
 
-def minIncrements(self, arr):
-        count = 0
-        arr.sort()
-        
-        for i in range(1, len(arr)):
-            # If the current element is not greater than the previous one, increment it
-            if arr[i] <= arr[i - 1]:
-                increment_needed = arr[i - 1] - arr[i] + 1
-                arr[i] += increment_needed
-                count += increment_needed
-                
-        return count
+
+def maximumProfit(prices):
+    max_profit = 0
+    for i in range(1, len(prices)):
+        if prices[i] > prices[i - 1]:
+            max_profit += prices[i] - prices[i - 1]
+            print(max_profit)
+    print(max_profit)
+
+
+prices = [100, 180, 260, 310, 40, 535, 695]
+maximumProfit(prices)
+
