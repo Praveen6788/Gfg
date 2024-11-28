@@ -366,3 +366,45 @@ def maximumProfit(prices):
 prices = [100, 180, 260, 310, 40, 535, 695]
 maximumProfit(prices)
 
+
+
+
+        
+        
+def myAtoi(self, s):
+        b=0
+        d=""
+        j=''
+        for i in s:
+            s.strip()
+            a=2**31-1
+            b=-a
+        
+            
+            if i in '-+' and len(d)==0:
+                j=i
+            elif i.isdigit():
+                a=i
+                b=int(b)*10 + int(a)
+                b=a
+                d+=a
+            elif i.isalpha():
+                break
+  
+  
+        a=2**31-1
+        b=-a
+        if d:
+             
+            k= int(j+d)
+        if len(d)<=0:
+            return 0
+           
+        elif k > a:
+            return a
+        elif k<b:
+            return -2**31
+                
+               
+        return k      
+            
