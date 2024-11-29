@@ -364,7 +364,7 @@ def maximumProfit(prices):
 
 
 prices = [100, 180, 260, 310, 40, 535, 695]
-maximumProfit(prices)
+# maximumProfit(prices)
 
 
 
@@ -408,3 +408,19 @@ def myAtoi(self, s):
                
         return k      
             
+
+
+def addBinary( s1, s2):
+    a=int(s1,2)
+    b=int(s2,2)
+    c=a+b
+    d=bin(c)[2:]
+    return d
+    
+    
+    
+s1 = "00100"
+s2 = "010"
+print(addBinary(s1,s2))
+    
+    
