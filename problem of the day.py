@@ -421,6 +421,24 @@ def addBinary( s1, s2):
     
 s1 = "00100"
 s2 = "010"
-print(addBinary(s1,s2))
-    
-    
+# print(addBinary(s1,s2))
+
+
+
+
+def search(txt,pat):
+    m=len(txt)
+    n=len(pat)
+    k=[]
+        
+    for i in range(m-n+1):
+        if txt[i:i+n]==pat:
+            k.append(i)
+    return k
+              
+
+  
+txt = "abcab"
+pat = "ab"  
+a1= search(txt,pat)
+# print(a1)
