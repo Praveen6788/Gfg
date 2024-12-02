@@ -442,3 +442,34 @@ txt = "abcab"
 pat = "ab"  
 a1= search(txt,pat)
 # print(a1)
+
+
+def isPrefixOfWord( sentence, searchWord):
+    a=list(sentence.split(" "))
+    k=len(searchWord)
+    
+    
+    for i in a:
+        if len(i)<len(searchWord):
+            continue
+        
+        else:
+            if i[:k]==searchWord:
+                return a.index(i)+1
+     
+    return -1        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+sentence = "i am tired"
+searchWord = "you"
+
+print(isPrefixOfWord(sentence,searchWord)) 
