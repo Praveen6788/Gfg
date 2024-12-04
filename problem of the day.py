@@ -458,18 +458,28 @@ def isPrefixOfWord( sentence, searchWord):
                 return a.index(i)+1
      
     return -1        
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        
 sentence = "i am tired"
 searchWord = "you"
 
-print(isPrefixOfWord(sentence,searchWord)) 
+# print(isPrefixOfWord(sentence,searchWord)) 
+
+
+
+def areRotations(s1,s2):
+        
+        for i in range(len(s1)-1):
+            a=s1[i+1:]+s1[:i+1]
+            # print(a)
+            
+            if s2 ==a:
+                return True
+        return False
+            
+        
+    
+    
+s1="abcd"
+s2 = "acbd"
+
+# print(areRotations(s1,s2))
